@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Remote Control</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf8">		
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		
+		<link rel="stylesheet" href="css/css.css" />
+		<script src="js.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+
+    </head>
+    <body>
+        
+    <div data-role="page" data-theme='b' index="homePage">
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <h1>Remote Control</h1>
+            <a href="#" data-ajax='false' onclick="return false;"><i class='icon-android'></i></a>
+        </div>
+        
+        <div data-role="content">   
+
+		<div id="networkStatus"></div>		
+				
+		<ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+	            <li data-role="list-divider">Menu</li>
+		    <li>
+					<a href="services.html" data-ajax="false" data-transition="slide"><i class='icon-tasks'></i> Gestion des services</a>
+	            </li>
+		    <li>
+					<a href="surveillance.html" data-ajax="false" data-transition="slide"><i class='icon-facetime-video'></i> Surveillance</a>
+	            </li>
+		    <li>
+					<a href="infos.html" data-ajax="false" data-transition="slide"><i class='icon-info'></i> Informations</a>
+	            </li>
+
+
+		    <li data-role="list-divider">Extras</li>
+		    <li>
+					<a href="#powerPopup" data-rel="popup" data-position-to="window" data-transition="pop"><i class='icon-power-off'></i> Alimentation</a>
+	            </li>
+	        </ul>
+        </div>
+	
+	<div data-role="popup" id="powerPopup" data-theme="b">
+        	<div data-role="header" data-theme="b">
+        	        <h1>Alimentation</h1>
+                </div>
+                <div data-role="content" data-theme="b">
+                    <p>Voulez vous arrêter ou redémarrer l'ordinateur ?</p>
+                    <div class='showastabs center nobg'>
+                            <a href="#" data-rel="back" data-icon="ok" data-iconpos="left" data-role="button" data-inline="true" onclick="power('reboot');">Redémarrer</a>
+                            <a href="#" data-rel="back" data-icon="delete" data-iconpos="left" data-role="button" data-inline="true" onclick="power('halt');">Arrêter</a>
+                    </div>
+                </div>
+       </div>
+	
+    </div>
+    
+    </body>
+</html>

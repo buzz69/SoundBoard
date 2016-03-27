@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>nativeDroid - Theme for jQuery Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf8">		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		
+		<link rel="stylesheet" href="css/css.css" />
+		<script src="js.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+    </head>
+    <body>
+        
+    <div data-role="page" data-theme='b' id="infosPage">
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Informations</h1>
+        </div>
+        
+        <div data-role="content">   
+
+		<ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+	            <li data-role="list-divider">Machine</li>
+		    <li>
+			<table width=100%>
+				<tr><td width=100>Nom:</td><td><div id="hostname">nom de la machine</div></td></tr>
+			</table>
+		    </li>
+		    <li>
+			<table width=100%>
+				<tr><td width=100>OS:</td><td><div id="os">systeme d'exploitation</div></td></tr>
+			</table>
+		    </li>
+		    <li>
+			<table width=100%>
+				<tr><td width=100>Mémoire:</td><td><div id="ram"><progress value='512' max='2048'></progress> 512/2048 Mo</div></td></tr>
+			</table>
+		    </li>
+		    <li>
+			<table width=100%>
+				<tr><td width=100>Disque dur:</td><td><div id="hdd"><progress value='30' max='250'></progress> 30/250 Go</div></td></tr>
+			</table>
+		    </li>
+		    <li data-role="list-divider">Reseau</li>
+		    <li>
+			<table width=100%>
+				<tr><td width=100>IP locale:</td><td><div id="iploc">192.168.1.1</div></td></tr>
+			</table>
+		    </li>
+		    <li>
+			<table width=100%>
+				<tr><td width=100>IP publique:</td><td><div id="ippub">192.168.1.1</div></td></tr>
+			</table>
+		    </li>
+		    <li>
+			<table width=100%>
+				<tr><td width=100>MAC:</td><td><div id="mac">00:00:00:00:00:00</div></td></tr>
+			</table>
+		    </li>
+		    <li>
+			<a href="scanports.html" data-rel="dialog" data-role="button" data-icon="magic" data-inline="true" >Scan des ports</a>
+		    </li>
+		</ul><br>
+
+	        
+        </div>
+	
+
+    </div>
+    
+    </body>
+</html>

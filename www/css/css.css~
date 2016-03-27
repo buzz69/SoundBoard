@@ -1,0 +1,15 @@
+#loaderDiv{
+	width:300px;
+	height:35px;
+	background:#000;
+	padding:3px;
+	border-radius:3px;
+	box-shadow:2px 3px 7px #000;
+}
+#loaderDiv td{
+	line-height:20px;
+	padding:5px;
+	color:#FFF;
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+}
