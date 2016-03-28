@@ -63,10 +63,10 @@ function getInfos(){
 			$("#os").html(response.machine['os']);
 			ramVal=response.machine['ramval'];
 			ramTotal=response.machine['ramtotal'];		
-			$("#ram").html("<progress value='"+ramVal+"' max='"+ramTotal+"'></progress> "+ramVal+"/"+ramTotal+" Mo");
+			$("#ram").html("<progress value='"+ramVal+"' max='"+ramTotal+"'></progress> "+ramVal+" Mo utilisés sur "+ramTotal+" Mo");
 			hddVal=response.machine['hddval'];
 			hddTotal=response.machine['hddtotal'];		
-			$("#hdd").html("<progress value='"+hddVal+"' max='"+hddTotal+"'></progress> "+hddVal+"/"+hddTotal+" Go");
+			$("#hdd").html("<progress value='"+hddVal+"' max='"+hddTotal+"'></progress> "+hddVal+" Go utilisés sur "+hddTotal+" Go");
 			$("#iploc").html(response.network['iploc']);
 			$("#ippub").html(response.network['ippub']);
 			$("#mac").html(response.network['mac']);
@@ -89,12 +89,12 @@ function getStatus(service){
 			fail2banState=response.fail2banstate;
 			motionState=response.motionstate;
 			//
-			(fail2banState=='on')? fail2banState='<i>running</i>' : fail2banState='<i>stopped</i>';
-			(motionState=='on')? motionState='<i>running</i>' : motionState='<i>stopped</i>';
+			(fail2banState=='on')? fail2banState='<i style="color:green">running</i>' : fail2banState='<i style="color:red">stopped</i>';
+			(motionState=='on')? motionState='<i style="color:green">running</i>' : motionState='<i style="color:red">stopped</i>';
 			//
 			if(service=='fail2ban'){
 				if($('#fail2banStatus')){				
-					$('#fail2banStatus').html('fail2ban - '+fail2banState);
+					$('#fail2banStatus').html('Fail2ban - '+fail2banState);
 				}
 			}
 			if(service=='motion'){
@@ -104,7 +104,7 @@ function getStatus(service){
 			}
 			if(service=='all'){
 				if($('#fail2banStatus')){				
-					$('#fail2banStatus').html('fail2ban - '+fail2banState);
+					$('#fail2banStatus').html('Fail2ban - '+fail2banState);
 				}
 				if($('#motionStatus')){	
 					$('#motionStatus').html('Motion - '+motionState);
@@ -154,15 +154,15 @@ function startMotionLive(){
 	tmpUrl=liveMotionURL+randomNum;
 	tmpIMG=new Image();
 	tmpIMG.src=tmpUrl;
-	console.log("load image: ("+liveMotionURL+randomNum+")");
+	//console.log("load image: ("+liveMotionURL+randomNum+")");
 	tmpIMG.onload= function(){
-		console.log('image chargée');		
+		//console.log('image chargée');		
 		$('#liveView').attr('src',tmpIMG.src);
 		tmpIMG=null;
 		$('#cameraStatus').html("");
 	};
 	tmpIMG.onerror=function(){
-		console.log("load error: ("+tmpIMG.src+")");
+		//console.log("load error: ("+tmpIMG.src+")");
 		$('#liveView').attr('src',"css/blank.png");
 		$('#cameraStatus').html("<div class='message error'><i class='icon-exclamation-sign'></i><p>Connexion a la camera impossible !</p></div>");
 		setTimeout("startMotionLive()",3000);
