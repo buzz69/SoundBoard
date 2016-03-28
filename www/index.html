@@ -32,51 +32,95 @@
     <body>
         
     <div data-role="page" data-theme='b' index="homePage">
-
-
         <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
             <h1>Remote Control</h1>
             <a href="#" data-ajax='false' onclick="return false;"><i class='icon-android'></i></a>
         </div>
-        
         <div data-role="content">   
-
-		<div id="networkStatus"></div>		
-				
-		<ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
-	            <li data-role="list-divider">Menu</li>
-		    <li>
+			<div id="networkStatus"></div>		
+			<ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+				<li data-role="list-divider">Menu</li>
+				<li>
 					<a href="services.html" data-ajax="false" data-transition="slide"><i class='icon-tasks'></i> Gestion des services</a>
-	            </li>
-		    <li>
+				</li>
+				<li>
 					<a href="surveillance.html" data-ajax="false" data-transition="slide"><i class='icon-facetime-video'></i> Surveillance</a>
-	            </li>
-		    <li>
-					<a href="infos.html" data-ajax="false" data-transition="slide"><i class='icon-info'></i> Informations</a>
-	            </li>
+				</li>
+				<li>
+					<a href="#infosPage" data-ajax="false" data-transition="slide"><i class='icon-info'></i> Informations</a>
+				</li>
 
 
-		    <li data-role="list-divider">Extras</li>
-		    <li>
+				<li data-role="list-divider">Extras</li>
+				<li>
 					<a href="#powerPopup" data-rel="popup" data-position-to="window" data-transition="pop"><i class='icon-power-off'></i> Alimentation</a>
-	            </li>
-	        </ul>
+				</li>
+			</ul>
         </div>
-	
-	<div data-role="popup" id="powerPopup" data-theme="b">
+		<div data-role="popup" id="powerPopup" data-theme="b">
         	<div data-role="header" data-theme="b">
-        	        <h1>Alimentation</h1>
-                </div>
-                <div data-role="content" data-theme="b">
-                    <p>Voulez vous arrêter ou redémarrer l'ordinateur ?</p>
-                    <div class='showastabs center nobg'>
-                            <a href="#" data-rel="back" data-icon="ok" data-iconpos="left" data-role="button" data-inline="true" onclick="power('reboot');">Redémarrer</a>
-                            <a href="#" data-rel="back" data-icon="delete" data-iconpos="left" data-role="button" data-inline="true" onclick="power('halt');">Arrêter</a>
-                    </div>
-                </div>
-       </div>
-	
+        	    <h1>Alimentation</h1>
+			</div>
+			<div data-role="content" data-theme="b">
+				<p>Voulez vous arrêter ou redémarrer l'ordinateur ?</p>
+				<div class='showastabs center nobg'>
+					<a href="#" data-rel="back" data-icon="ok" data-iconpos="left" data-role="button" data-inline="true" onclick="power('reboot');">Redémarrer</a>
+					<a href="#" data-rel="back" data-icon="delete" data-iconpos="left" data-role="button" data-inline="true" onclick="power('halt');">Arrêter</a>
+				</div>
+			</div>
+        </div>
     </div>
     
+	<div data-role="page" data-theme='b' id="infosPage">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Informations</h1>
+        </div>
+         <div data-role="content">   
+			<ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+					<li data-role="list-divider">Machine</li>
+				<li>
+				<table width=100%>
+					<tr><td width=100>Nom:</td><td><div id="hostname">nom de la machine</div></td></tr>
+				</table>
+				</li>
+				<li>
+				<table width=100%>
+					<tr><td width=100>OS:</td><td><div id="os">systeme d'exploitation</div></td></tr>
+				</table>
+				</li>
+				<li>
+				<table width=100%>
+					<tr><td width=100>Mémoire:</td><td><div id="ram"><progress value='512' max='2048'></progress> 512/2048 Mo</div></td></tr>
+				</table>
+				</li>
+				<li>
+				<table width=100%>
+					<tr><td width=100>Disque dur:</td><td><div id="hdd"><progress value='30' max='250'></progress> 30/250 Go</div></td></tr>
+				</table>
+				</li>
+				<li data-role="list-divider">Reseau</li>
+				<li>
+				<table width=100%>
+					<tr><td width=100>IP locale:</td><td><div id="iploc">192.168.1.1</div></td></tr>
+				</table>
+				</li>
+				<li>
+				<table width=100%>
+					<tr><td width=100>IP publique:</td><td><div id="ippub">192.168.1.1</div></td></tr>
+				</table>
+				</li>
+				<li>
+				<table width=100%>
+					<tr><td width=100>MAC:</td><td><div id="mac">00:00:00:00:00:00</div></td></tr>
+				</table>
+				</li>
+				<li>
+				<a href="scanports.html" data-rel="dialog" data-role="button" data-icon="magic" data-inline="true" >Scan des ports</a>
+				</li>
+			</ul><br>
+        </div>
+    </div>
+	
     </body>
 </html>
